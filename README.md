@@ -44,12 +44,16 @@ cobblemon-jei-integration/
 - **专用渲染器**: `PokemonIngredientRenderer` 渲染宝可梦图片和名称
 - **配方类别**: `PokemonDropsRecipeCategory` 定义掉落物配方显示
 - **自动注册**: 通过 `@JeiPlugin` 注解自动加载
+<img width="867" height="857" alt="cji-jei" src="https://github.com/user-attachments/assets/a5d1ba20-6c4d-4d2f-8237-535eea685d99" />
+
 
 ### EMI 集成
 - **EMI 插件**: `CobblemonEmiPlugin` 实现 EMI 插件接口
 - **EMI 配方**: `PokemonDropsEmiRecipe` 适配 EMI 配方系统
 - **自动发现**: 通过 `@EmiEntrypoint` 注解自动加载
 - **界面优化**: 支持概率显示和文本居中对齐
+<img width="814" height="819" alt="cji-emi" src="https://github.com/user-attachments/assets/df10fc09-c5a9-4772-a14f-3b04f634940b" />
+
 
 ## 📋 依赖要求
 
