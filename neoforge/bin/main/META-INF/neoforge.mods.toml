@@ -1,0 +1,48 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "cobblemon_jei_integration"
+version = "${file.jarVersion}"
+displayName = "Cobblemon JEI Integration"
+description = '''
+JEI and EMI integration for Cobblemon, providing Pokemon drops information display with drop rates and bilingual support.
+'''
+authors = "CWG Team"
+displayURL = "https://github.com/cwg-team/cobblemon-jei-integration"
+
+[[dependencies.cobblemon_jei_integration]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_jei_integration]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.cobblemon_jei_integration]]
+modId = "cobblemon"
+type = "required"
+versionRange = "[1.6.0,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.cobblemon_jei_integration]]
+modId = "jei"
+type = "optional"
+versionRange = "[19.21.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.cobblemon_jei_integration]]
+modId = "emi"
+type = "optional"
+versionRange = "[1.1.0,)"
+ordering = "AFTER"
+side = "BOTH"

@@ -1,0 +1,51 @@
+plugins {
+    id 'net.neoforged.moddev' version '2.0.88'
+}
+
+base {
+    archivesName = "${mod_name}-NeoForge"
+}
+
+neoForge {
+    version = project.neo_version
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.DEBUG
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+dependencies {
+    // Cobblemon - 完整的模组（必需依赖）
+    implementation "com.cobblemon:neoforge:${cobblemon_version}"
+
+    // JEI - 可选依赖（编译时需要，运行时可选）
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
+    // 注意：移除 runtimeOnly，让用户自己选择安装 JEI 或 EMI
+
+    // EMI - 可选依赖（编译时需要，运行时可选）
+    compileOnly "dev.emi:emi-neoforge:${emi_version}"
+
+    // 其他必要的依赖
+    implementation "org.slf4j:slf4j-api:1.7.36"
+}

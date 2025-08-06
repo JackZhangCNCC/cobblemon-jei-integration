@@ -1,0 +1,8 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    // Common 模块只包含纯 Java 代码，不依赖任何平台特定的库
+    // 所有平台特定的依赖都在 neoforge 模块中
+}
